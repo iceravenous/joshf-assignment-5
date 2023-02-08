@@ -15,27 +15,28 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 		
 		currentSize ++;
-
+		
 		while (currentSize <= maxSize) {
 //			System.out.println("Size" + currentSize);
+			
 			for(int i = 0; i < items.length; i++ ) {
 				if (items[i] == null) {
 					items[i] = item;
+										
+					if (currentSize == maxSize){
+						maxSize = maxSize*2;
+
+						Object temp[]= Arrays.copyOf(items, maxSize);
+						items = temp;
+						items[currentSize]=item;
+					}
 					return true;
 				} 
 
 			}
 			
 		}
-		if (currentSize > maxSize) {
-			maxSize = maxSize*2;
 
-			Object temp[]= Arrays.copyOf(items, maxSize);
-			items = temp;
-			items[currentSize]=item;				
-			return true;
-
-		}
 		return false;
 	}
 
@@ -50,7 +51,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 	@Override
 	public T get(int index) {
 		// TODO Auto-generated method stub
-		//System.out.println("Max Size: " + maxSize);
+		
 		return (T)items[index];
 	}
 	

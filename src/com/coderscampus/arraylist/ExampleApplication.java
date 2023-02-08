@@ -22,10 +22,11 @@ public class ExampleApplication {
 		newList.add("Shaung2");
 		newList.add("Robert2");
 		newList.add("Sandy2");
+		newList.add("Sandy3");
 
 		
 		for (int i=0; i<newList.getSize(); i++) {
-		    System.out.println(newList.get(i));
+		    System.out.println(i + " - > " + newList.get(i));
 		}
 		
 		
