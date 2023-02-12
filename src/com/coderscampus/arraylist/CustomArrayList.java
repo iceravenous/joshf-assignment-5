@@ -17,7 +17,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		currentSize ++;
 		
 		while (currentSize <= maxSize) {
-//			System.out.println("Size" + currentSize);
+
 			
 			for(int i = 0; i < items.length; i++ ) {
 				if (items[i] == null) {
@@ -28,7 +28,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 						Object temp[]= Arrays.copyOf(items, maxSize);
 						items = temp;
-						items[currentSize]=item;
+						//items[currentSize]=item;
 					}
 					return true;
 				} 
