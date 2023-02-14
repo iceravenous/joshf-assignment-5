@@ -26,11 +26,13 @@ public class ExampleApplication {
 
 		
 		for (int i=0; i<newList.getSize(); i++) {
-		    System.out.println(i + " - > " + newList.get(i));
+		    System.out.println(newList.get(i));
 		}
+
 		
 		
 
 	}
 
 }
+ 

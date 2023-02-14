@@ -7,35 +7,35 @@ public class CustomArrayList<T> implements CustomList<T> {
 	Integer maxSize = 10; //
 	int currentSize = 0;
 	 
-	
+	public Integer getMaxSize(Integer maxSize) {
+		return maxSize;
+	}
 	
 	@Override
 	public boolean add(T item) {
 		// TODO Auto-generated method stub
 
 		
-		currentSize ++;
-		
-		while (currentSize <= maxSize) {
 
-			
+		if (currentSize ==  maxSize){
+			maxSize = maxSize*2;
+			Object temp[]= Arrays.copyOf(items, maxSize);
+			items = temp;
+		}
 			for(int i = 0; i < items.length; i++ ) {
 				if (items[i] == null) {
 					items[i] = item;
-										
-					if (currentSize == maxSize){
-						maxSize = maxSize*2;
-
-						Object temp[]= Arrays.copyOf(items, maxSize);
-						items = temp;
-						//items[currentSize]=item;
-					}
+					currentSize ++;					
+					
+						
 					return true;
 				} 
-
+				
 			}
-			
-		}
+	
+
+		
+		
 
 		return false;
 	}
